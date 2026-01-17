@@ -4,8 +4,8 @@ import { NavLink } from 'react-router';
 const Navbar = () => {
     const links = <>
         {/* <li className='mr-2 btn text-main border border-main hover:bg-main hover:text-white'>Home</li> */}
-        <li className='mr-8 '><NavLink to="/" className={({ isActive }) => isActive ? " bg-main text-white px-4 " : "text-main font-bold border border-main"}>Home</NavLink></li>
-        <li className='mr-8'><NavLink to="/about" className={({ isActive }) => isActive ? " bg-main text-white px-4" : "text-main font-bold border border-main"}>About</NavLink></li>
+        <li className='mr-8 '><NavLink to="./" className={({ isActive }) => isActive ? " bg-main text-white px-4 " : "text-main font-bold border border-main"}>Home</NavLink></li>
+        <li className='mr-8'><NavLink to="./about" className={({ isActive }) => isActive ? " bg-main text-white px-4" : "text-main font-bold border border-main"}>About</NavLink></li>
 
 
     </>
