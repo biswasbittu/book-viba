@@ -4,6 +4,11 @@ import Book from "../Book/Book";
 
 
 const Books = ({books}) => {
+    const [seeMore,setSeeMore]=useState(6)
+    const handleSeeMore=()=>{
+        setSeeMore(seeMore+6)
+
+    }
     // console.log(books)
     
     // const [allBooks, setAllBooks] = useState([]);
@@ -28,9 +33,19 @@ const Books = ({books}) => {
             } */}
             <div className="my-8 flex flex-col items-center justify-center md:grid  md:grid-cols-2 lg:grid-cols-3  gap-4">
                 {
-                   books.filter(data=>data.id !== null).map(book=><Book key={book.bookId} book={book}></Book>) 
+                   books.filter(data=>data.id !== null).slice(0,seeMore).map(book=><Book key={book.bookId} book={book}></Book>) 
                 }
+                
             </div>
+            <div className="my-2 ">
+                    <div className=" flex justify-center items-center">
+                        {
+                       seeMore < books.length && (<button onClick={()=>handleSeeMore()}
+                     className="btn btn-wide  border border-main ">See More</button>)
+                    }
+                    </div>
+                    
+                </div>
         </div>
     );
 };
