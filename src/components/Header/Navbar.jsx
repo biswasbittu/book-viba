@@ -2,8 +2,10 @@ import React from 'react';
 
 const Navbar = () => {
     const links = <>
-        <li className='mr-2 btn '>Home</li>
-        <li className='mr-2 btn '>Books</li>
+        <li className='mr-2 btn text-main border border-main hover:bg-main hover:text-white'>Home</li>
+        <li className='mr-2 btn text-main border border-main hover:bg-main hover:text-white '>Listed Books</li>
+        <li className='mr-2 btn text-main border border-main hover:bg-main hover:text-white '>Page to Read</li>
+
     </>
     return (
         <div className="navbar bg-base-100 font-work">
@@ -26,8 +28,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-4">
-                <a className="btn">Sign In</a>
-                <a className="btn">Sign Up</a>
+                <a className="btn bg-main text-white">Sign In</a>
+                <a className="btn bg-second  text-white">Sign Up</a>
             </div>
         </div>
     );
