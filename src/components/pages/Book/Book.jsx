@@ -1,16 +1,18 @@
 import React from 'react';
 import { use } from 'react';
 import { CiStar } from "react-icons/ci";
+import { FaStarHalfAlt } from 'react-icons/fa';
+import { Link } from 'react-router';
 const Book = ({ book }) => {
     // const book=use(bookPromise)
-    console.log(book)
-    const { image, tags, bookName, author,category,rating } = book
+    // console.log(book)
+    const { image, tags, bookName, author,category,rating,bookId } = book
     return (
-        <div>
-            <div className="card bg-base-100 w-96 shadow-sm">
+        <Link to={`/bookDetails/${bookId}`}>
+            <div className="card bg-base-100 w-96 shadow-sm border border-gray-200">
                 <figure className='bg-base-300 p-4 rounded-lg'>
                     <img
-                        className='w-24 md:w-48 p-4 rounded-lg'
+                        className='w-32 md:w-48 p-4 rounded-lg md:h-[250px]'
                         src={image}
                         alt="Shoes" />
                 </figure>
@@ -23,9 +25,9 @@ const Book = ({ book }) => {
                         {bookName}
 
                     </h2>
-                    <p className='font-work text-xl'>By: {author}</p>
-                    <div className='px-4'>
-                 <hr className='px-4 border-dotted text-gray-200' />
+                    <p className='font-work text-xl '>By: {author}</p>
+                    <div className='px-4 border-t border-dashed border-gray-300 '>
+                 {/* <hr className='px-4 border-dotted text-gray-200' /> */}
                </div>
                   <div className='flex justify-between px-'>
                     <div>
@@ -33,13 +35,13 @@ const Book = ({ book }) => {
                     </div>
                     <div className='flex items-center gap-2'>
                         <p>{rating}</p>
-                        <CiStar className='text-xl' />
+                        <FaStarHalfAlt />
                     </div>
                   </div>
                 </div>
-               
+
             </div>
-        </div>
+        </Link>
     );
 };
 

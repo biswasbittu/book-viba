@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from "react";
 import { useState } from "react";
 import Book from "../Book/Book";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 
 const Books = ({books}) => {
@@ -24,7 +25,7 @@ const Books = ({books}) => {
     // const bookPromise = fetch('./booksData.json').then(res=>res.json())
     return (
         <div>
-            <h1>Hello Ami Books: </h1>
+            <h1 className="text-center text-2xl font-bold md:text-7xl font-playfair"> Books </h1>
             {/* {
                 <Suspense fallback={"Loading..."}>
                     <Book bookPromise={bookPromise}></Book>
@@ -41,7 +42,7 @@ const Books = ({books}) => {
                     <div className=" flex justify-center items-center">
                         {
                        seeMore < books.length && (<button onClick={()=>handleSeeMore()}
-                     className="btn btn-wide  border border-main ">See More</button>)
+                     className="btn btn-wide  border border-main text-main  hover:text-white hover:bg-main/90 transition-transform hover:scale-105">See More <FaAngleDoubleDown /></button>)
                     }
                     </div>
                     

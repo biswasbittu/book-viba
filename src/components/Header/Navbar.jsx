@@ -1,10 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const Navbar = () => {
     const links = <>
-        <li className='mr-2 btn text-main border border-main hover:bg-main hover:text-white'>Home</li>
-        <li className='mr-2 btn text-main border border-main hover:bg-main hover:text-white '>Listed Books</li>
-        <li className='mr-2 btn text-main border border-main hover:bg-main hover:text-white '>Page to Read</li>
+        {/* <li className='mr-2 btn text-main border border-main hover:bg-main hover:text-white'>Home</li> */}
+        <li className='mr-8 '><NavLink to="/" className={({ isActive }) => isActive ? " bg-main text-white px-4 " : "text-main font-bold border border-main"}>Home</NavLink></li>
+        <li className='mr-8'><NavLink to="/about" className={({ isActive }) => isActive ? " bg-main text-white px-4" : "text-main font-bold border border-main"}>About</NavLink></li>
+
 
     </>
     return (
@@ -16,14 +18,14 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow ">
                         {links}
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-2xl">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 ">
                     {links}
                 </ul>
             </div>
